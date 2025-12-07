@@ -5,5 +5,8 @@
   "postYourAd": "Post Your Ad",
   "selectCategory": "Choose Category",
   "sellAd": "Sell Your Ad",
-  "category": "Category"
+  "category": "Category",
+  "carsForSale": "Cars for Sale",
+  "apartmentsForSale": "Apartments for Sale",
+  "mobilePhones": "Mobile Phones"
 }

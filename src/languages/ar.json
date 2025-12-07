@@ -5,5 +5,8 @@
   "postYourAd": "انشر إعلانك",
   "selectCategory": "اختر الفئة",
   "sellAd": "بيع إعلانك",
-  "category": "القسم"
+  "category": "القسم",
+  "carsForSale": "سيارات للبيع",
+  "apartmentsForSale": "شقق للبيع",
+  "mobilePhones": "موبايلات"
 }
