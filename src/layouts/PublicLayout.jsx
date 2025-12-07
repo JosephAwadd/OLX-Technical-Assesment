@@ -1,9 +1,13 @@
-import React from 'react'
+import { Container } from '@mantine/core'
 import { Outlet } from 'react-router'
+import Navbar from '../components/navigation/navbar'
 
 const PublicLayout = () => {
     return (
-        <Outlet />
+        <Container size="xl">
+            <Navbar />
+            <Outlet />
+        </Container>
     )
 }
 

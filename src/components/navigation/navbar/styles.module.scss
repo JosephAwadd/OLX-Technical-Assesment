@@ -1,0 +1,38 @@
+@use "../../../radius.scss" as *;
+@use "../../../colors.scss" as *;
+
+.navbar {
+  &-logo {
+    width: 56px;
+    margin-top: 16px;
+  }
+  &-content {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+  }
+
+  &-button {
+    &-label {
+      color: $black-9;
+    }
+    &-root {
+      padding: 6px !important;
+      border-radius: $radius-xl !important;
+    }
+  }
+  &-profile-pic {
+    width: 40px;
+  }
+  &-sell-button {
+    &-root {
+      border-radius: $radius-xl !important;
+      background-color: $yellow !important;
+      color: $black-9 !important;
+    }
+  }
+  &-divider {
+    margin: 16px 0px;
+  }
+}
