@@ -25,7 +25,7 @@ const PostAddAttributes = () => {
     });
 
     const fetchedData = data?.[state?.item?.id]?.flatFields
-
+    console.log(fetchedData)
     return (
         <Box>
             <h2>{t('sellAd')}</h2>

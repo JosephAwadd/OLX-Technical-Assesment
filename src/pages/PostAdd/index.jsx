@@ -9,28 +9,36 @@ import { Link } from 'react-router';
 
 const PostAdd = () => {
     const { data, isLoading, error } = useCategories();
-    const [currentView, setCurrentView] = useState("grid");
-    const [selectedCategory, setSelectedCategory] = useState(null);
-    const [selectedSub, setSelectedSub] = useState(null);
+    const [state, setState] = useState({
+        currentView: "grid",
+        selectedCategory: null,
+        selectedSub: null,
+    })
 
     const { i18n, t } = useTranslation();
 
     const levels = [
         {
             items: data,
-            selected: selectedCategory,
+            selected: state.selectedCategory,
             onSelect: (item) => {
-                setSelectedCategory(item);
-                setSelectedSub(null);
+                setState({
+                    ...state,
+                    selectedCategory: item,
+                    selectedSub: null
+                })
             },
         },
         {
-            items: selectedCategory?.children,
-            selected: selectedSub,
-            onSelect: (item) => setSelectedSub(item),
+            items: state.selectedCategory?.children,
+            selected: state.selectedSub,
+            onSelect: (item) => setState({
+                ...state,
+                selectedSub: item
+            }),
         },
         {
-            items: selectedSub?.children,
+            items: state.selectedSub?.children,
             selected: null,
             onSelect: null,
         },
@@ -43,7 +51,7 @@ const PostAdd = () => {
             <h3>{t('selectCategory')}</h3>
             {isLoading ? (
                 <CustomLoading />
-            ) : currentView === "grid" ? (
+            ) : state.currentView === "grid" ? (
                 <Box className={styles['postAdd-category-list']}>
                     {
                         data?.map((cat) => {
@@ -51,8 +59,11 @@ const PostAdd = () => {
                                 <Box className={styles['postAdd-category-list-child']}
                                     key={cat?.isLoading}
                                     onClick={() => {
-                                        setSelectedCategory(cat);
-                                        setCurrentView("level1");
+                                        setState({
+                                            ...state,
+                                            currentView: "level1",
+                                            selectedCategory: cat
+                                        })
                                     }}
                                 >
                                     <span>{i18n.language === "en" ? cat?.name : cat?.name_l1}</span>
@@ -92,7 +103,7 @@ const PostAdd = () => {
                                             to={`/post/attributes`}
                                             state={{
                                                 item,
-                                                category: selectedCategory
+                                                category: state.selectedCategory
                                             }}
                                             className={styles['postAdd-table-col-item']}
                                         >

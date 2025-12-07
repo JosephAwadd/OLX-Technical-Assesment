@@ -31,6 +31,13 @@ const PostAddAttributesFields = ({ field }) => {
             placeholder={field?.name}
             onChange={() => { }}
         />,
+        integer: <CustomTextField
+            type="number"
+            allowDecimal={false}
+            name={field?.name}
+            placeholder={field?.name}
+            onChange={() => { }}
+        />
 
     };
 
