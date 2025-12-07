@@ -8,6 +8,7 @@ import { useTranslation } from 'react-i18next'
 import LanguageToggle from '../../data/languageToggle'
 import CustomButton from '../../inputs/customButton'
 import profilePic from '../../../assets/profile-pic.png'
+import { Link } from 'react-router'
 
 const Navbar = () => {
     const { t } = useTranslation();
@@ -45,15 +46,17 @@ const Navbar = () => {
                     <IconBell size={24} />
                 </CustomButton>
                 <img src={profilePic} alt='profilePic' className={styles['navbar-profile-pic']} />
-                <CustomButton
-                    className={{
-                        root: styles['navbar-sell-button-root'],
-                        label: styles['navbar-sell-button-label'],
-                    }}
-                    size="md"
-                >
-                    <IconPlus size={16} /> {t("sellLabel")}
-                </CustomButton>
+                <Link to="/post" style={{ textDecoration: 'none' }}>
+                    <CustomButton
+                        className={{
+                            root: styles['navbar-sell-button-root'],
+                            label: styles['navbar-sell-button-label'],
+                        }}
+                        size="md"
+                    >
+                        <IconPlus size={16} /> {t("sellLabel")}
+                    </CustomButton>
+                </Link>
             </Box>
 
             <Divider className={styles['navbar-divider']} />

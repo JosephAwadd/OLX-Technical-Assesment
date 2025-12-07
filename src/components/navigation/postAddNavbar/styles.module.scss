@@ -1,0 +1,15 @@
+@use "../../../colors.scss" as *;
+
+.postAddNavbar {
+  &-wrapper {
+    background-color: $light-gray;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &-logo {
+    width: 56px;
+  }
+}

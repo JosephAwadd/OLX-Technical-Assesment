@@ -1,5 +1,9 @@
 {
   "country": "لبنان",
   "searchLabel": "ابحث عن السيارات، الهواتف وأكثر...",
-  "sellLabel": "بيع"
+  "sellLabel": "بيع",
+  "postYourAd": "انشر إعلانك",
+  "selectCategory": "اختر الفئة",
+  "sellAd": "بيع إعلانك",
+  "category": "القسم"
 }
